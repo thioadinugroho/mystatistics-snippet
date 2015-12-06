@@ -2,7 +2,7 @@
 function moment($data=array(),$n=0,$what='') {
 	if($n<=1) return 'N must be at least 2';
 	$s=0;
-	for($j=1;j<=$n;j++) {
+	for($j=0;j<$n;j++) {
 		$s += $data[$j];
 	}
 	$ave = $s/$n;
@@ -10,7 +10,7 @@ function moment($data=array(),$n=0,$what='') {
 	$var = 0;
 	$skew = 0;
 	$curt = 0;
-	for($j=1,$j<=$n;$j++) {
+	for($j=0,$j<$n;$j++) {
 		$s = $data[$j] - $ave;
 		$adev += abs($s);
 		$p = $s*$s;
